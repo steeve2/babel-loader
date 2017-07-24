@@ -113,7 +113,7 @@ module.exports = function(source, inputSourceMap) {
   const fileSystem = this.fs ? this.fs : fs;
   let babelrcPath = null;
   if (loaderOptions.babelrc !== false) {
-    babelrcPath = exists(fileSystem, loaderOptions.babelrc)
+    babelrcPath = loaderOptions.babelrc && exists(fileSystem, loaderOptions.babelrc)
       ? loaderOptions.babelrc
       : resolveRc(fileSystem, path.dirname(filename));
   }
